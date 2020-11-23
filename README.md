@@ -3,5 +3,5 @@
 This is a PoC of using Selenium in Visual Studio Code with MSTest and .NET Core
 
 **Prerequisites:**
- - .NET Core 3.1: https://dotnet.microsoft.com/download/dotnet-core
+ - .NET 5.0: https://dotnet.microsoft.com/download/dotnet/5.0
  - Visual Studio Code: https://code.visualstudio.com/download
