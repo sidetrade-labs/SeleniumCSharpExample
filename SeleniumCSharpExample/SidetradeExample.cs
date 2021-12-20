@@ -27,7 +27,7 @@ namespace SeleniumCSharpExample
             using var chromeDriver = new ChromeDriver(browserDriverPath, options);
 
             // Assign the target URL
-            var targetUrl = "https://www.sidetrade.com/product/aimie-ai/";
+            var targetUrl = "https://www.sidetrade.com/aimie/";
 
             // Go to target URL
             chromeDriver.Navigate().GoToUrl(targetUrl);
@@ -35,11 +35,11 @@ namespace SeleniumCSharpExample
             // Create new wait timer and set it to 30 seconds
             var wait = new WebDriverWait(chromeDriver, new TimeSpan(0, 0, 0, 30));
 
-            // Wait until the Aimie banner is visible
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.ClassName("aimie-area-banner")));
+            // Wait until the content is available
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.ClassName("b-content")));
 
             // Find the Aimie banner element
-            var aimieElement = chromeDriver.FindElement(By.ClassName("aimie-area-banner"));
+            var aimieElement = chromeDriver.FindElement(By.CssSelector(".kt-inside-inner-col .has-orange-color"));
 
             // Confirm the element contains the word AIMIE
             Assert.IsTrue(aimieElement.Text.Contains("AIMIE"));
